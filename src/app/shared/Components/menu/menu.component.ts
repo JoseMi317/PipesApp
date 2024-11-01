@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { MenuModule } from 'primeng/menu';
+
 
 @Component({
   selector: 'shared-menu',
@@ -11,13 +11,46 @@ import { MenuModule } from 'primeng/menu';
 
 })
 export class MenuComponent {
-  public menuitems: MenuItem[] | undefined;
-
+  items: MenuItem[] | undefined;
   ngOnInit() {
-      this.menuitems = [
-          { label: 'New', icon: 'pi pi-plus' },
-          { label: 'Search', icon: 'pi pi-search' }
+      this.items = [
+      {
+        label: 'Pipes De Angular',
+        icon : 'pi pi-desktop',
+        items:[
+          {
+            label: 'Textos y Fechas',
+            icon: 'pi pi-align-left',
+            routerLink: '/'
+          },
+          {
+            label: 'Numeros',
+            icon: 'pi pi-dollar',
+            routerLink: '/numbers'
+
+          },
+          {
+            label: 'No Comunes',
+            icon: 'pi pi-globe',
+            routerLink: '/uncommon'
+
+          },
+        ]
+      },
+      {
+        label: 'Pipes Personalizados',
+        icon: 'pi pi-cog',
+        items:[
+          {
+            label: 'Otro Elemento',
+            icon: 'pi pi-cog',
+
+          }
+        ]
+      }
       ];
   }
-
 }
+
+
+
